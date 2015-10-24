@@ -1,0 +1,39 @@
+#clickme {
+}
+
+.card:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+[class*='Row'] {
+  float: top; 
+  padding-top: 50px;
+}
+
+.Row1{
+	width:25%;
+	background-color: 
+}
+
+.Row2{
+	width:25%;
+	background-color: 
+}
+
+.Row3{
+	width:25%;
+	background-color: 
+}
+
+.Row4{
+	width:25%;
+	background-color: 
+}
+
+*, *:after, *:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
