@@ -5,21 +5,66 @@
 	
 <title>AJAX Project</title>
 	<link rel="stylesheet" type="text/css" href="main.css">
+<style>
+  p {
+    color: blue;
+    font-size: 14px;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  h1 {
+  	color: blue;
+  	font-size: 28px;
+  	font-family: 'Montserrat', sans-serif;
+  }
+
+  h2 {
+  	color: blue;
+  	font-size: 20px;
+  	font-family: 'Montserrat', sans-serif;
+  }
+
+
+  </style>
+<script src="jquery-1.11.3.min.js"></script>
+
+	<script src="ajaxgameboard.js"></script>
+	<script src="ajaxexample.js"></script>
+
 </head>
 
 <body>
 
-<button id="clickme">
-  Aaaahhh, push it!
-</button>
+<div class ="instructionBox">
+	<h1>Welcome to the Quick Pick Concentration Game!</h2>
+	<p></p>
+	<p></p>
+	<p><h2>Concentration has been enjoyed by generations of players. It requires observation and a good memory to be successful. This version of Concentration also requires speed!</p>
+	<p></p>
+	<p><em>The object of the game is to remove all cards from the board as quickly as possible.</em></h2></p>
 
-<p></p>
-<!-- <img id="pumpkin" src="http://static.ebony.com/8-SaltPepa_gallery-image_43768.jpg" alt=""> -->
-<!-- 
-<div class="redbox"></div> -->
+	<p>You remove the cards by clicking two cards (one at a time) that have matching images underneath. If the images do not match, the cards are turned back over. You need to remember which images are on which cards. The card position will not move during each gamme session. Try to match all the cards as quickly as possible!</p>
+	<p></p>
+	<p></p>
+	<button id="letsplay"><h2>Let's Play!</h2></button>
 
+</div>
 
-	<script src="jquery-1.11.3.min.js"></script>
-	<script src="ajaxexample.js"></script>
+<script type="text/javascript">
+  WebFontConfig = {
+    google: { families: [ 'Montserrat:400,700:latin' ] }
+  };
+  (function() {
+    var wf = document.createElement('script');
+    wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+      '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+    wf.type = 'text/javascript';
+    wf.async = 'true';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(wf, s);
+  })(); </script>
+
+	
+
 </body>
 </html>
