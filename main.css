@@ -1,6 +1,17 @@
-#clickme {
+.instructionBox {
+	margin: 0 auto;
+	width:90%;
+	text-align:center;
 }
-
+#gameboard {
+	margin: 0 auto;
+	width:70%;
+}
+#letsplay {
+	position:relative;
+	width:200px;
+	margin: 0 auto;
+}
 .card:after {
   content: "";
   display: table;
@@ -11,26 +22,41 @@
   float: top; 
   padding-top: 50px;
 }
+/*.row1 .row2 .row3 .row4 {
+	width: 100%;
+	background-color:blue;
+}*/
 
-.Row1{
-	width:25%;
-	background-color: #339BF8
+.card {
+	border-radius: 10px;
+	display:inline-block;
+	margin:15px;
+	height:211px;
+	width: 150px;
 }
 
-.Row2{
-	width:25%;
-	background-color: #339BF8
+.facedown {
+	background-image: url('http://cdn.bulbagarden.net/upload/thumb/1/17/Cardback.jpg/150px-Cardback.jpg');
+/*background-color:blue;*/
 }
 
-.Row3{
-	width:25%;
-	background-color: #339BF8
+.faceup {
+	background-color: black;
+	border:7px solid black;
 }
 
-.Row4{
-	width:25%;
-	background-color: #339BF8
+.helper{
+	display:inline-block;
+	height: 100%;
+	vertical-align:middle;
 }
+
+img {
+	vertical-align:middle;
+	max-height:211px;
+	width:136px;
+}
+
 
 *, *:after, *:before {
   -webkit-box-sizing: border-box;

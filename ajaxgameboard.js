@@ -1,11 +1,21 @@
 $(document).ready(function() {
 
+
+$('#gameboard').hide();
+
+
+
 $("#letsplay").click(function() {
-	console.log("kkkkkkk");
 	// event.preventDefault();
 
  	$(".instructionBox").hide();
+ 	$('#gameboard').show();
   });
+
+$('.card').click(function(){
+	console.log('wow')
+	this.addClass('faceup').removeClass('facedown')
+})
 
 
 
