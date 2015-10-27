@@ -59,17 +59,17 @@ $("#letsplay").click(function() {
 
 
 				//the next block shuffles the cards index
-				// var currentIndex = cards.length
-				// var temp
-				// var rand
-				// while(0 !== currentIndex){
-				// 	rand = Math.floor(Math.random()*currentIndex);
-				// 	currentIndex--;
+				var currentIndex = cards.length
+				var temp
+				var rand
+				while(0 !== currentIndex){
+					rand = Math.floor(Math.random()*currentIndex);
+					currentIndex--;
 
-				// 	temp = cards[currentIndex];
-				// 	cards[currentIndex] = cards[rand];
-				// 	cards[rand] = temp;
-				// }
+					temp = cards[currentIndex];
+					cards[currentIndex] = cards[rand];
+					cards[rand] = temp;
+				}
 
 				//this block add the images to the html cards
 				var $htmlCards = $('.card')
