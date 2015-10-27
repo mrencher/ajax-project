@@ -1,3 +1,21 @@
+  p {
+    color: blue;
+    font-size: 14px;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  h1 {
+    color: blue;
+    font-size: 28px;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  h2 {
+    color: blue;
+    font-size: 20px;
+    font-family: 'Montserrat', sans-serif;
+  }
+
 .instructionBox {
 	margin: 0 auto;
 	width:90%;
@@ -30,7 +48,7 @@
 .card {
 	border-radius: 10px;
 	display:inline-block;
-	margin:15px;
+	margin:2px;
 	height:211px;
 	width: 150px;
 }

@@ -57,7 +57,6 @@ $("#letsplay").click(function() {
 					}
 				}
 
-
 				//the next block shuffles the cards index
 				var currentIndex = cards.length
 				var temp
@@ -102,7 +101,6 @@ $("#letsplay").click(function() {
 			///if there's 16 matches the board is hidded and congratulations are in order.
 			if(clickHistory[clickHistory.length-1]===clickHistory[clickHistory.length-2]){
 					matches++
-					console.log(matches)
 			}
 			else if(clickHistory[clickHistory.length-1]!==clickHistory[clickHistory.length-2]){
 				$(this).hide().parent('div').removeClass('faceup').addClass('facedown')
