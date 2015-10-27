@@ -10,13 +10,7 @@ $("#letsplay").click(function() {
 
  	$(".instructionBox").hide();
  	$('#gameboard').show();
-  });
-
-
-
-
-
-
+});
 
 
 
@@ -65,17 +59,17 @@ $("#letsplay").click(function() {
 
 
 				//the next block shuffles the cards index
-				var currentIndex = cards.length
-				var temp
-				var rand
-				while(0 !== currentIndex){
-					rand = Math.floor(Math.random()*currentIndex);
-					currentIndex--;
+				// var currentIndex = cards.length
+				// var temp
+				// var rand
+				// while(0 !== currentIndex){
+				// 	rand = Math.floor(Math.random()*currentIndex);
+				// 	currentIndex--;
 
-					temp = cards[currentIndex];
-					cards[currentIndex] = cards[rand];
-					cards[rand] = temp;
-				}
+				// 	temp = cards[currentIndex];
+				// 	cards[currentIndex] = cards[rand];
+				// 	cards[rand] = temp;
+				// }
 
 				//this block add the images to the html cards
 				var $htmlCards = $('.card')
@@ -98,16 +92,25 @@ $("#letsplay").click(function() {
 
 
 	var clickHistory = [0]
+	var matches = 0
 	$('.card').on('click', function(){
-		clickHistory.push(this)
-		console.log(clickHistory)
-		$(this).addClass('faceup').removeClass('facedown').children('img').show().delay(1000).queue(function(){
-			if(clickHistory[clickHistory.length-1]!==clickHistory[clickHistory.length-2]){
-				console.log('yay')
+		clickHistory.push($(this).children('img').attr('src'))
+		$(this).addClass('faceup').removeClass('facedown').children('img').show().delay(1200).queue(function(){
+			if(clickHistory[clickHistory.length-1]===clickHistory[clickHistory.length-2]){
+					matches++
+					console.log(matches)
+			}
+			else if(clickHistory[clickHistory.length-1]!==clickHistory[clickHistory.length-2]){
 				$(this).hide().parent('div').removeClass('faceup').addClass('facedown')
+				$(this).dequeue();
+			}
+			if(matches===16){
+				$('#gameboard').hide()
+				$('body').append('<h5>YOU CAUGHT THEM ALL!</h5>')
 			}
 		})
 	});
+
 
 
 

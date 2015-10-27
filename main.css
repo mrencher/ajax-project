@@ -57,6 +57,14 @@ img {
 	width:136px;
 }
 
+h5 {
+	font-family:impact;
+	font-size: 100px;
+	margin:0 auto;
+	width: 300px;
+	text-align:center;
+}
+
 
 *, *:after, *:before {
   -webkit-box-sizing: border-box;
