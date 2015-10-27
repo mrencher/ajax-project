@@ -15,18 +15,18 @@ $("#letsplay").click(function() {
 
 
 	function createCards() {
-  	var card = 1;
-  	for (var i = 1; i <= 4; i++){
-  		var $row = $('<div>')
-  		$row.addClass('row'+i)
-  		$('#gameboard').append($row);
-  		for( var j = 1; j <= 4; j++){
-  			var $card = $('<div>')
-  			$card.addClass('card facedown').attr('id', 'card'+card)
-  			card++;
-  			$($card).appendTo('.row'+i)
+  		var card = 1;
+  		for (var i = 1; i <= 4; i++){
+  			var $row = $('<div>')
+  			$row.addClass('row'+i)
+  			$('#gameboard').append($row);
+  			for( var j = 1; j <= 4; j++){
+  				var $card = $('<div>')
+  				$card.addClass('card facedown').attr('id', 'card'+card)
+  				card++;
+  				$($card).appendTo('.row'+i)
+  			}
   		}
-  	}
 
 	}
 
@@ -115,14 +115,14 @@ $("#letsplay").click(function() {
 	});
 
 function strobe() {
-				var red = Math.floor(Math.random()*255);
+		var red = Math.floor(Math.random()*255);
         var green = Math.floor(Math.random()*255);
         var blue = Math.floor(Math.random()*255);
-            if(red>50&&green>50&&blue>50) {
-                $('body').css('color', 'black');
-            } else {
-                $('body').css('color', 'white');
-            }
+        if(red>50&&green>50&&blue>50) {
+            $('body').css('color', 'black');
+        } else {
+            $('body').css('color', 'white');
+        }
         var randomRGBA = 'rgba('+red+','+green+','+blue+',1)';
         $('body').css('background-color', randomRGBA);
 }
