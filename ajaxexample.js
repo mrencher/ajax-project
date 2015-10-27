@@ -95,7 +95,11 @@ $("#letsplay").click(function() {
 	var matches = 0
 	$('.card').on('click', function(){
 		clickHistory.push($(this).children('img').attr('src'))
+		//this shows the card after it is clicked then calls a function
 		$(this).addClass('faceup').removeClass('facedown').children('img').show().delay(1200).queue(function(){
+			///this function first checks if the last two clicks were matches. If so matches are added.
+			///if they don't match the card is then flipped back
+			///if there's 16 matches the board is hidded and congratulations are in order.
 			if(clickHistory[clickHistory.length-1]===clickHistory[clickHistory.length-2]){
 					matches++
 					console.log(matches)
@@ -107,10 +111,23 @@ $("#letsplay").click(function() {
 			if(matches===16){
 				$('#gameboard').hide()
 				$('body').append('<h5>YOU CAUGHT THEM ALL!</h5>')
+				setInterval(strobe, 200)
 			}
 		})
 	});
 
+function strobe() {
+				var red = Math.floor(Math.random()*255);
+        var green = Math.floor(Math.random()*255);
+        var blue = Math.floor(Math.random()*255);
+            if(red>50&&green>50&&blue>50) {
+                $('body').css('color', 'black');
+            } else {
+                $('body').css('color', 'white');
+            }
+        var randomRGBA = 'rgba('+red+','+green+','+blue+',1)';
+        $('body').css('background-color', randomRGBA);
+}
 
 
 
