@@ -70,13 +70,13 @@ $("#letsplay").click(function() {
 					cards[rand] = temp;
 				}
 
-				console.log(ajaxHelper(cards));
+				// console.log(ajaxHelper(cards));
 				//this block add the images to the html cards
-				// var $htmlCards = $('.card')
-				// for (var x = 0; x < 17; x++){
-				// 	$($htmlCards[x]).html('<span class = "helper"></span><img src="'+cards[x]+'" id="i'+(x+1)+'">')
-				// 	$('#i'+x).hide()
-				// }
+				var $htmlCards = $('.card')
+				for (var x = 0; x < 17; x++){
+					$($htmlCards[x]).html('<span class = "helper"></span><img src="'+cards[x]+'" id="i'+(x+1)+'">')
+					$('#i'+x).hide()
+				}
 
 
 			}
@@ -87,16 +87,16 @@ $("#letsplay").click(function() {
 		})
 	}
 	createCards()
-	// getAww()
+	getAww()
 
-	function ajaxHelper(cards){
-				var $htmlCards = $('.card')
-				for (var x = 0; x < 17; x++){
-					$($htmlCards[x]).html('<span class = "helper"></span><img src="'+cards[x]+'" id="i'+(x+1)+'">')
-					$('#i'+x).hide()
-				}
-		return cards;
-	}
+	// function ajaxHelper(cards){
+	// 			var $htmlCards = $('.card')
+	// 			for (var x = 0; x < 17; x++){
+	// 				$($htmlCards[x]).html('<span class = "helper"></span><img src="'+cards[x]+'" id="i'+(x+1)+'">')
+	// 				$('#i'+x).hide()
+	// 			}
+	// 	return cards;
+	// }
 
 	console.log(getAww())
 
