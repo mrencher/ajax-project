@@ -41,14 +41,21 @@ $("#letsplay").click(function() {
 
 				var cards = []
 				var limit = 8 //8 pairs for 16 cards
-
+				console.log(data)
 				for(var i = 1; i<=limit;i++)
 				{
-					var url = data.data.children[i].data.url
-					//if the url isn't formatted correctly or is a gif it is not a valid url
-					if (url.substring(url.length - 4)!=='gifv' && 
-							url.substring(0,12)==='http://i.img'){
+					console.log(i)
+					if(i!==23){
 
+						var url = data.data.children[i].data.url
+					}
+					else
+						limit++
+		
+					//if the url isn't formatted correctly or is a gif it is not a valid url
+
+					if (url.substring(url.length - 4)!=='gifv' ){
+						var url = data.data.children[i].data.url
 						cards.push(data.data.children[i].data.url)
 						cards.push(data.data.children[i].data.url)
 					}
@@ -70,7 +77,6 @@ $("#letsplay").click(function() {
 					cards[rand] = temp;
 				}
 
-				// console.log(ajaxHelper(cards));
 				//this block add the images to the html cards
 				var $htmlCards = $('.card')
 				for (var x = 0; x < 17; x++){
@@ -86,19 +92,10 @@ $("#letsplay").click(function() {
 
 		})
 	}
+
 	createCards()
 	getAww()
 
-	// function ajaxHelper(cards){
-	// 			var $htmlCards = $('.card')
-	// 			for (var x = 0; x < 17; x++){
-	// 				$($htmlCards[x]).html('<span class = "helper"></span><img src="'+cards[x]+'" id="i'+(x+1)+'">')
-	// 				$('#i'+x).hide()
-	// 			}
-	// 	return cards;
-	// }
-
-	console.log(getAww())
 
 	var clickHistory = [0]
 	var matches = 0
