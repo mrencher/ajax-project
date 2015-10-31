@@ -41,23 +41,20 @@ $("#letsplay").click(function() {
 
 				var cards = []
 				var limit = 8 //8 pairs for 16 cards
-				console.log(data)
+
 				for(var i = 1; i<=limit;i++)
 				{
-					console.log(i)
-					if(i!==23){
+                    var url = data.data.children[i].data.url
 
-						var url = data.data.children[i].data.url
-					}
-					else
-						limit++
-		
 					//if the url isn't formatted correctly or is a gif it is not a valid url
 
-					if (url.substring(url.length - 4)!=='gifv' ){
-						var url = data.data.children[i].data.url
-						cards.push(data.data.children[i].data.url)
-						cards.push(data.data.children[i].data.url)
+					if (url.substring(url.length - 4)!=='gifv' && url.substring(url.length - 3)!=='new'){
+
+						if(url.substring(url.length-3)!=='jpg')
+                            url = url+'.jpg'
+                        console.log(url)
+						cards.push(url)
+						cards.push(url)
 					}
 					else{//limit increase because on this iteration we didn't add a pair of cards
 						limit++
